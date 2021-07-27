@@ -41,6 +41,13 @@ foreach ($week as &$day) {
 
 print_r($week);
 
+//
+//foreach ($week as  $i => $day) {
+//    $week[$i] = substr($day, 0, -3);
+//}
+//print_r($week);
+
+
 new_exercise(5);
 // === Exercise 5 ===
 // The array should be printing every letter of the alphabet (a-z) but instead it does that + aa-yz
