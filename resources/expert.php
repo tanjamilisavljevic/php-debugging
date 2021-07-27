@@ -57,5 +57,5 @@ $arr = [];
 for ($letter = 'a'; $letter <= 'z'; $letter++) {
     array_push($arr, $letter);
 }
-
-print_r($arr); // Array ([0] => a, [1] => b, [2] => c, ...) a-z alphabetical array
+print_r(array_slice($arr,0, 26));
+// Array ([0] => a, [1] => b, [2] => c, ...) a-z alphabetical array
