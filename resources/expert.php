@@ -59,3 +59,40 @@ for ($letter = 'a'; $letter <= 'z'; $letter++) {
 }
 print_r(array_slice($arr,0, 26));
 // Array ([0] => a, [1] => b, [2] => c, ...) a-z alphabetical array
+
+new_exercise(6);
+// === Final exercise ===
+// The fixed code should echo the following at the bottom:
+// Here is the name: $name - $name2
+// $name variables are randomly combined as seen in the code, fix all the bugs whilst keeping the functionality!
+// Examples: captain strange, ant widow, iron man, ...
+$arr = [];
+
+
+function combineNames($str1 = "", $str2 = "") {
+    $params = [$str1, $str2];
+    foreach($params as &$param) {
+        if ($param == "") {
+            $param = randomHeroName();
+        }
+    }
+    return implode(" - ", $params);
+}
+
+function randomGenerate($arr, $amount) {
+    for ($i = $amount; $i > 0; $i--) {
+        array_push($arr, randomHeroName());
+    }
+    return $amount;
+}
+
+function randomHeroName()
+{
+    $hero_firstnames = ["captain", "doctor", "iron", "Hank", "ant", "Wasp", "the", "Hawk", "Spider", "Black", "Carol"];
+    $hero_lastnames = ["America", "Strange", "man", "Pym", "girl", "hulk", "eye", "widow", "panther", "daredevil", "marvel"];
+    $heroes = [$hero_firstnames, $hero_lastnames];
+    $randname = $heroes[rand(0,count($heroes)-1)][rand(0, 10)];
+    return $randname;
+}
+
+echo "Here is the name: " . combineNames();
